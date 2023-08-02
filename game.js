@@ -31,39 +31,11 @@ class Game {
     this.root.appendChild(namesRoot);
     namesRoot.id = 'name';
 
+    let greetingsRoot = document.createElement('p');
+    greetingsRoot.innerText = ("");
+    greetingsRoot.id = 'greetings';
+    this.root.appendChild(greetingsRoot);
 
-    let labelSizeQuizRoot = document.createElement('p'); // TODO: - REMOVE THIS PART
-    labelSizeQuizRoot.innerText = ("Please choose number of questions:");
-    this.root.appendChild(labelSizeQuizRoot);
-
-    let divSizeQuiz = document.createElement('div'); //radiobuttons // TODO: - change to input for answers
-    divSizeQuiz.id = 'divSizeQuiz';
-    this.root.appendChild(divSizeQuiz);
-
-    let sizeQuizRadio5 = document.createElement('input'); //for questions
-    divSizeQuiz.appendChild(sizeQuizRadio5);
-    sizeQuizRadio5.type = 'radio';
-    sizeQuizRadio5.name = 'sizeQuizRadio';
-    sizeQuizRadio5.id = 'radio5';
-    sizeQuizRadio5.value = 'radio5';
-    sizeQuizRadio5.checked = true;
-
-    let labelRadio5 = document.createElement('label');
-    labelRadio5.setAttribute('for', 'radio5');
-    labelRadio5.innerText = '5';
-    divSizeQuiz.appendChild(labelRadio5);
-
-    let sizeQuizRadio10 = document.createElement('input');
-    divSizeQuiz.appendChild(sizeQuizRadio10);
-    sizeQuizRadio10.type = 'radio';
-    sizeQuizRadio10.name = 'sizeQuizRadio';  // TODO: - change to input for answers OR safe for radiobutton questions
-    sizeQuizRadio10.id = 'radio10';
-    sizeQuizRadio10.value = 'radio10';
-
-    let labelRadio10 = document.createElement('label');
-    labelRadio10.setAttribute('for', 'radio10');
-    labelRadio10.innerText = '10';
-    divSizeQuiz.appendChild(labelRadio10);
 
     let btnAskQ = document.createElement('button');
     btnAskQ.innerHTML = 'GO';
@@ -77,24 +49,18 @@ class Game {
 
   askNameSize () {
     let nameInput = document.getElementById('name');
+    let greetingsRoot = document.getElementById('greetings');
     this.player = new Player(nameInput.value);
-    if (this.player !== "Mikael" || nameInput.value !=="Миша" || nameInput.value !=="Мишка") {
+    if (nameInput.value === "Mikael" || nameInput.value ==="Миша" || nameInput.value ==="Мишка") {
+      greetingsRoot.innerHTML = "Hello, birthday boy! Good luck!";
+      this.questionList = new QuestionList(10);
+      this.questionList.load().then((result) => {  //The then() method returns a Promise. It takes an argument: callback function for the success
+        this.askCurrentQuestion();
+      })
+    } else {
       console.log("Mikael is here!");
+      greetingsRoot.innerHTML = "Sorry! This quest only for birthday boy";
     }
-
-    let sizeQuizRadio5 = document.getElementById('radio5');
-
-    let size = 0;
-
-    if (sizeQuizRadio5.checked) {
-      size = '5'; 
-    } else {size = '10'; 
-    } 
-    
-    this.questionList = new QuestionList(10);
-    this.questionList.load().then((result) => {  //The then() method returns a Promise. It takes an argument: callback function for the success
-      this.askCurrentQuestion(); 
-    });
   }
 
   askCurrentQuestion() {     // - for every question QuestionList  item[i]:
@@ -105,7 +71,7 @@ class Game {
     questionCounter.innerHTML = ((this.currentQuestion + 1) + " / " + this.questionList.size);  // number current question and size för den Quis
     this.root.appendChild(questionCounter); 
   
-    let questText = document.createElement('div'); // skapar fält för text med fråga
+    let questText = document.createElement('div');
     questText.id = 'questText';
     questText.innerHTML = this.escapeHTML(this.questionList.items[this.currentQuestion].question);  // use method escapeHTML (function to correct difference between HTML tags in questions' texts
     this.root.appendChild(questText); 
