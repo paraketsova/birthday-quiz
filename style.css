@@ -1,13 +1,14 @@
 body{
-  font-family: 'Roboto', cursive;
-  background-color: rgb(253, 245, 230);
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFFFFF;
   min-width: 40em;
 }
 
 h1 {
-  color: orangered;
+  color: #FF9F1C;
   text-align: center;
   margin-top: 2em;
+  font-family: 'Bungee Spice', cursive;
 }
 
 #root {
@@ -21,8 +22,7 @@ h1 {
 }
 
 button {
-  font-family: 'Roboto', cursive;
-
+  font-family: 'Poppins', sans-serif;
   padding:0.3em 1.2em;
   margin:0 0.1em 0.1em 0;
   border:0.16em solid rgba(255,255,255,0);
@@ -30,19 +30,18 @@ button {
   box-sizing: border-box;
   text-decoration:none;
   font-weight:bold;
-  color:orangered;
+  color: #FFFFFF;
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   text-align:center;
   transition: all 0.2s;
-  background-color:#f1bb4e;
+  background-color: #2EC4B6;
   outline: none;
   cursor: pointer;
   height: 3em;
 }
 
 button:hover {
-  border-color: rgba(255,255,255,1);
-
+  border-color: #CBF3F0;
 }
 
 #questionCounter {
@@ -52,30 +51,28 @@ button:hover {
   text-align: left;
   font-weight: bold;
   color:orangered;
-
 }
+
 #name {
   height: 3em;
   padding:0.3em 1.2em;
   margin:0 0.1em 0.1em 0;
   border:0.16em solid rgba(255,255,255,0);
   border-radius:0.5em;
-  background-color:#fad997;
+  background-color: #CBF3F0;
   outline: none;
   cursor: pointer;
   font-weight:bold;
   font-size: 1em;
   text-align: center;
-
 }
 
-#name:hover {
-  border-color: rgba(255,255,255,1);
-}
+/*#name:hover {*/
+/*  border-color: rgba(255,255,255,1);*/
+/*}*/
 
 #divSizeQuiz {
   height: 3em;
-  
 }
 
 #questText {
@@ -104,7 +101,8 @@ input, label {
   margin-top: 3em;
 }
 
-/* Fancy radiobuttons styles, borrowed from https://snipp.ru/html-css/style-radio and modified for my project */
+
+/* Fancy radiobuttons styles TODO: Delete it*/
 input[type=radio] {
   display: none;
 }
@@ -123,6 +121,6 @@ input[type=radio] + label:hover {
 	color: #666;
 }
 input[type=radio]:checked + label {
-  background: #fad997;
-  color: orangered;
+  background: #CBF3F0;
+  color: black;
 }

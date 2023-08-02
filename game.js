@@ -43,24 +43,31 @@ class Game {
 
     this.root.appendChild(btnAskQ);
     btnAskQ.addEventListener('click', (event) => {
-      this.askNameSize();
+      this.askName();
     })
   }
 
-  askNameSize () {
+  askName () {
     let nameInput = document.getElementById('name');
     let greetingsRoot = document.getElementById('greetings');
     this.player = new Player(nameInput.value);
+    const btnPlay = document.getElementById("btnAskQ");
     if (nameInput.value === "Mikael" || nameInput.value ==="Миша" || nameInput.value ==="Мишка") {
-      greetingsRoot.innerHTML = "Hello, birthday boy! Good luck!";
-      this.questionList = new QuestionList(10);
+      greetingsRoot.innerHTML = "Hello, birthday boy!if you can handle it, you'll find your way to the gift. Good luck! And don't cheat!";
+      let size = 10;
+      this.questionList = new QuestionList(size);
+      const btnPlay = document.getElementById("btnAskQ");
+      btnPlay.remove();
+
       this.questionList.load().then((result) => {  //The then() method returns a Promise. It takes an argument: callback function for the success
-        this.askCurrentQuestion();
+        this.askCurrentQuestion();   // TODO: setTimeout(this.askCurrentQuestion, 5000) OR change input to type submit and revise f for button
       })
+
     } else {
-      console.log("Mikael is here!");
       greetingsRoot.innerHTML = "Sorry! This quest only for birthday boy";
+      btnPlay.remove(); // TODO: add exit to first page?
     }
+
   }
 
   askCurrentQuestion() {     // - for every question QuestionList  item[i]:
@@ -136,11 +143,11 @@ class Game {
     // let sumPoints = this.getPoints(); // return value from this.getPoints() //TODO: убрать
 
     let resultField1 = document.createElement('p'); //field for result
-    let resultField2 = document.createElement('p'); 
-    resultField1.innerHTML = ('Поздравляю, ' + this.player.name + ', ты всё разгадал!');
+    // let resultField2 = document.createElement('p');
+    resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you almost made it!');
     // resultField2.innerHTML = ('You got '+ sumPoints + ' out of ' + this.questionList.size + ' answers correct!');
     resultField.appendChild(resultField1);
-    resultField.appendChild(resultField2);
+    // resultField.appendChild(resultField2);
 
     let btnPlayAgain =  document.createElement('button'); //add button 'Play again' btnNext.type = 'image'; TODO: DELETE
     btnPlayAgain.innerHTML = 'NEW GAME'; 
@@ -181,7 +188,6 @@ class Game {
         'answer_b', 
         'answer_c'
       ]
-      
       correctAnswer = {
         answer_a_correct: "false", 
         answer_b_correct: "true", 
