@@ -62,27 +62,6 @@ input, label {
   margin-right: 0.5em;
 }
 
-#answer {
-  background-color: #eee;
-  vertical-align: top;
-  outline: none;
-  padding: 0;
-  height: 40px;
-  line-height: 40px;
-  text-indent: 10px;
-  display: inline-block;
-  width: 8rem;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  font-size: 14px;
-  border-radius: 3px;
-  margin-top: 1rem;
-}
-
-#answerTextField:focus {
-  outline: 2px solid blue;
-}
-
 #name {
   font-family: 'Bungee Spice', cursive;
   height: 3em;
@@ -111,7 +90,7 @@ input, label {
 
 #questText {
   text-align: left;
-  height: 5em;
+  /*height: 5em;*/
   vertical-align: middle;
   font-weight: bold;
   font-family: 'Poppins', 'Raleway', sans-serif;
@@ -123,6 +102,27 @@ input, label {
 
 #answerWrap {
   text-align: left;
+}
+
+#answer {
+  background-color: #eee;
+  vertical-align: top;
+  outline: none;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 10px;
+  display: inline-block;
+  width: 8rem;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-top: 1rem;
+}
+
+#answerTextField:focus {
+  outline: 2px solid blue;
 }
 
 #resultField {
