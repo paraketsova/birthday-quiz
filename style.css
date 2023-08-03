@@ -65,6 +65,7 @@ button:hover {
 }
 
 #name {
+  font-family: 'Bungee Spice', cursive;
   height: 3em;
   padding:0.3em 1.2em;
   margin:0 0.1em 0.1em 0;
@@ -73,14 +74,9 @@ button:hover {
   background-color: #CBF3F0;
   outline: none;
   cursor: pointer;
-  font-weight:bold;
-  font-size: 1em;
+  font-size: 1.2em;
   text-align: center;
 }
-
-/*#name:hover {*/
-/*  border-color: rgba(255,255,255,1);*/
-/*}*/
 
 #divSizeQuiz {
   height: 3em;
@@ -90,7 +86,7 @@ button:hover {
   height: 5em;
   vertical-align: middle;
   font-weight: bold;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', 'Raleway', sans-serif;
 }
 
 #answerList {
