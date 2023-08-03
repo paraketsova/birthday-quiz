@@ -22,12 +22,19 @@ h1 {
   margin-right: auto;
 }
 
-#questText {
+
+#introductionText {
   text-align: left;
+  background-color: #CBF3F0;
+  vertical-align: middle;
+  padding: 1rem;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:0.5em;
+  margin-bottom: 2rem;
 }
 
 button {
-  font-family: 'Poppins', 'Open Sans', sans-serif;
+  font-family: 'Poppins', 'Open Sans', 'Raleway', sans-serif;
   padding:0.3em 1.2em;
   margin:0 0.1em 0.1em 0;
   border:0.16em solid rgba(255,255,255,0);
@@ -45,23 +52,35 @@ button {
   height: 3em;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
 button:hover {
   border-color: #CBF3F0;
+  color: black;
 }
 
-#questionCounter {
-  height: 2em;
-  margin-top: 1em;
-  text-align: left;
-  font-weight: bold;
-  color:orangered;
+input, label {
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+#answer {
+  background-color: #eee;
+  vertical-align: top;
+  outline: none;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 10px;
+  display: inline-block;
+  width: 8rem;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  border-radius: 3px;
+  margin-top: 1rem;
+}
+
+#answerTextField:focus {
+  outline: 2px solid blue;
 }
 
 #name {
@@ -78,30 +97,32 @@ button:hover {
   text-align: center;
 }
 
+#questionCounter {
+  height: 2em;
+  margin-top: 1em;
+  text-align: left;
+  font-weight: bold;
+  color:orangered;
+}
+
 #divSizeQuiz {
   height: 3em;
 }
 
 #questText {
+  text-align: left;
   height: 5em;
   vertical-align: middle;
   font-weight: bold;
   font-family: 'Poppins', 'Raleway', sans-serif;
+  background-color: #CBF3F0;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius:0.5em;
+  padding: 1rem;
 }
 
-#answerList {
-  height: 10em;
+#answerWrap {
   text-align: left;
-}
-
-li {
-  list-style-type: none;
-  margin: 1em;
-}
-
-input, label {
-  vertical-align: middle;
-  margin-right: 0.5em;
 }
 
 #resultField {
@@ -110,25 +131,10 @@ input, label {
 }
 
 
-/* Fancy radiobuttons styles TODO: Delete it*/
-input[type=radio] {
-  display: none;
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
 }
-input[type=radio] + label {
-  display: inline-block;
-  margin-right: 10px;
-  width: 2em;
-	cursor: pointer;
-	padding: 0px 15px;
-	line-height: 34px;
-	border: 1px solid #999;
-	border-radius: 6px;
-  user-select: none;
-}
-input[type=radio] + label:hover {
-	color: #666;
-}
-input[type=radio]:checked + label {
-  background: #CBF3F0;
-  color: black;
-}
+
