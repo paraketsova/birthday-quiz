@@ -1,5 +1,5 @@
 body{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #FFFFFF;
   min-width: 40em;
 }
@@ -9,20 +9,25 @@ h1 {
   text-align: center;
   margin-top: 2em;
   font-family: 'Bungee Spice', cursive;
+  font-size: 3em;
 }
 
 #root {
   margin-top: 5em;
-  text-align: center;
   height: 23em;
   max-width: 50em;
   display: block;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
+#questText {
+  text-align: left;
+}
+
 button {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Open Sans', sans-serif;
   padding:0.3em 1.2em;
   margin:0 0.1em 0.1em 0;
   border:0.16em solid rgba(255,255,255,0);
@@ -32,12 +37,19 @@ button {
   font-weight:bold;
   color: #FFFFFF;
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-  text-align:center;
+  text-align: center;
   transition: all 0.2s;
   background-color: #2EC4B6;
   outline: none;
   cursor: pointer;
   height: 3em;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 button:hover {
@@ -46,7 +58,6 @@ button:hover {
 
 #questionCounter {
   height: 2em;
-  margin-left: 4em;
   margin-top: 1em;
   text-align: left;
   font-weight: bold;
@@ -76,9 +87,10 @@ button:hover {
 }
 
 #questText {
-  height: 3em;
+  height: 5em;
   vertical-align: middle;
   font-weight: bold;
+  font-family: 'Raleway', sans-serif;
 }
 
 #answerList {

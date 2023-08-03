@@ -5,7 +5,7 @@ class QuestionList {
   }
 
   load() {
-    let link = ('https://quizapi.io/api/v1/questions?apiKey=kQ640FJsMce9YQXnWD6fypSfdEBccAx3s71YzfAb&category=code&difficulty=Easy&tags=JavaScript&limit=' + this.size);
+    let link = ('questions-data.json');
    
     return fetch(link) 
       .then((response) => response.json())

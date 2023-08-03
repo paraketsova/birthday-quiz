@@ -90,9 +90,11 @@ class Game {
     for (let key in this.questionList.items[this.currentQuestion].answers) { //  for... in   = remove unused spaces in questions
       const element = this.questionList.items[this.currentQuestion].answers[key];
       if (element !== null) {
-        let answerTextWrap = document.createElement('li'); //skapar checkbox wrap
+
+
+        let answerTextWrap = document.createElement('li'); //create checkbox wrap
         answerList.appendChild(answerTextWrap);
-        let answerText = document.createElement('input'); //skapar checkbox för varje svar
+        let answerText = document.createElement('input'); //create checkbox for every answer
         answerText.type = 'checkbox';
         answerText.id = (key);
         answerText.name = ('answer_' + this.currentQuestion);
@@ -105,11 +107,38 @@ class Game {
         answerTextWrap.appendChild(labelAnswerText);
       }
     }
-   
-    let btnNext = document.createElement('button'); 
+
+    // BUTTON FOR CHECK THE ANSWER
+    // let btnCheck = document.createElement('button');
+    // btnCheck.innerHTML = 'CHECK';
+    // btnCheck.id = 'btnCheck';
+    // this.root.appendChild(btnCheck);
+    //
+    // btnCheck.addEventListener('click', (event) => {
+    //   this.savePlayersAnswer(); // to safe answer to answers array
+    //   const isCorrect = this.compareOneAnswer(
+    //     playersAnswer, //TODO - add this variable for this userAnswer
+    //     this.questionList.items[this.currentQuestion].correct_answers
+    //   );
+    //
+    //   if (isCorrect) {
+    //     if (this.currentQuestion < this.questionList.size - 1) {
+    //       this.currentQuestion++;
+    //       this.askCurrentQuestion();
+    //     } else {
+    //       this.showResults(); //  if it's the last question go to showResult
+    //     }
+    //   } else {
+    //   //  TODO: add message about wrong answer
+    //   }
+    //
+    // })
+
+
+    let btnNext = document.createElement('button');
     btnNext.innerHTML = 'NEXT';
     btnNext.id = 'btnNext';
-    this.root.appendChild(btnNext); 
+    this.root.appendChild(btnNext);
 
     btnNext.addEventListener('click', (event) => { 
       this.savePlayersAnswer(); // to safe answer to answers array
