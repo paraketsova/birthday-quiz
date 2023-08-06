@@ -4,11 +4,13 @@ class Game {
     this.questionList = null;
     this.currentQuestion = 0;
     this.playersAnswerList = [];  // [[0],[1]..] array.length = size.
-    this.playerNames = ["mikael", "миша", "михаил", "мишка", "mikols"];
+    this.playerNames = ["mikael", "миша", "михаил", "мишка", "mikols", "миша ольшанский","михаил ольшанский", "mikael olshansky"];
 
+    this.title = document.getElementById('title');
     this.root = document.getElementById('root');
   }
 
+  // ----- FIRST SCREEN WITH TEXT ------- //
   start(event) {
     const introductionText = document.createElement('div');
     introductionText.id = 'introductionText';
@@ -27,10 +29,19 @@ class Game {
       this.play();
     });
     this.root.appendChild(btnPlay);
+
+    //======================TODO: delete = this area for testing only!
+    const btnTEST = document.createElement('button');
+    btnTEST.id = 'btnTEST';
+    btnTEST.innerHTML = 'TO THE END';
+    btnTEST.addEventListener('click', (event) => {
+      this.showResults();
+    });
+    this.root.appendChild(btnTEST);
   }
 
   play() { //if game starts add form (username, age)
-
+    // ----- GREETINGS AND INPUT FOR NAME ------- //
     this.root.innerHTML = ''; //  då root är tom
 
     let labelNamesRoot = document.createElement('p'); // for username
@@ -57,7 +68,7 @@ class Game {
     })
   }
 
-  // ----- GREETINGS AND INPUT FOR NAME ------- //
+  // ----- ASK NAME ------- //
   askName() {
     let nameInput = document.getElementById('name');
     let greetingsRoot = document.getElementById('greetings');
@@ -111,43 +122,8 @@ class Game {
     answerTextField.name = ('answer_' + this.currentQuestion); //TODO: это нужно???
     answerWrap.appendChild(answerTextField);
 
-    // let answerSubmitWrap = document.createElement('div'); //TODO - ????? or delete this block
-    // answerSubmitWrap.id = 'answerSubmit';
-    // answerWrap.appendChild(answerSubmitWrap);
-    // let answerSubmit = document.createElement('input');
-    // answerSubmit.id = 'answerSubmit';
-    // answerSubmit.type = 'submit';
-    // answerSubmit.value = 'Send answer';
-    // answerWrap.appendChild(answerSubmit);
 
-    //TODO - DELETE UL answers
-    // answerWrap.appendChild(answerTextField);
-    //
-    // let answerList = document.createElement('ul'); //add field for answers wrap
-    // answerList.id = 'answerList';
-    // this.root.appendChild(answerList);
-    //
-    // for (let key in this.questionList.items[this.currentQuestion].answers) { //  for... in   = remove unused spaces in questions
-    //   const element = this.questionList.items[this.currentQuestion].answers[key];
-    //   if (element !== null) {
-    //
-    //     let answerTextWrap = document.createElement('li'); //create checkbox wrap
-    //     answerList.appendChild(answerTextWrap);
-    //     let answerText = document.createElement('input');
-    //     answerText.type = 'checkbox';
-    //     answerText.id = (key);
-    //     answerText.name = ('answer_' + this.currentQuestion);
-    //
-    //     let labelAnswerText = document.createElement('label');
-    //     labelAnswerText.setAttribute('for', key); //
-    //
-    //     labelAnswerText.innerHTML = this.escapeHTML(element);
-    //     answerTextWrap.appendChild(answerText);
-    //     answerTextWrap.appendChild(labelAnswerText);
-    //   }
-    // }
-
-    // ----- BUTTON FOR CHECK THE ANSWER ------- //
+    // ----- CHECK THE ANSWER ------- //
     let btnCheck = document.createElement('button');
     btnCheck.innerHTML = 'CHECK';
     btnCheck.id = 'btnCheck';
@@ -171,30 +147,11 @@ class Game {
       } else {
       //  TODO: add message about wrong answer
       }
-
     })
-    //
-    // let btnNext = document.createElement('button');
-    // btnNext.innerHTML = 'NEXT';
-    // btnNext.id = 'btnNext';
-    // this.root.appendChild(btnNext);
-    //
-    // btnNext.addEventListener('click', (event) => {
-    //   this.savePlayersAnswer(); // to safe answer to answers array
-    // //
-    // //   if (this.currentQuestion < this.questionList.size - 1) {
-    // //     this.currentQuestion++; //späder på this.currentQuestion
-    // //     this.askCurrentQuestion(); //anropar _den_ metoden igen
-    // //   } else {
-    // //     console.log('show results!'); //TODO: delete!
-    // //     this.showResults(); //  if it's the last question go to showResult
-    // //   };
-    // })
   }
 
   // ----- SAVE THE ANSWERS ------- //
   savePlayersAnswer(currentAnswer) {      // push checked answers in playersAnswer[] and in this.playersAnswerList[]
-    // let currentAnswer = document.getElementById('answer');
     console.log('we on safe now '); //TODO: delete
     this.playersAnswerList.push([this.currentQuestion , +currentAnswer.value]); //push userAnswer in array playersAnswer
     console.log(this.playersAnswerList); //TODO: delete
@@ -203,101 +160,54 @@ class Game {
 
   // ----- SHOW RESULTS, FINISH GAME? ------- //
   showResults() {   //get and show result, restart game
-      root.innerHTML = '';  // remove question's block med btn
-      let resultField = document.createElement('div'); // create field for result
-      resultField.id = 'resultField';
-      this.root.appendChild(resultField);
+    this.root.innerHTML = '';  // remove question's block med btn
+    this.title.innerHTML = '';
+    let bodyElement = document.body; //
+    bodyElement.id = 'resultBackground'; // add background for body
+
+    let resultField = document.createElement('div'); // create field for result
+    resultField.id = 'resultField';
+    this.root.appendChild(resultField);
+
+    this.openTheBox(); //show the box
+    setTimeout(this.showFinishMessage, 1000); //show the finish message
+  }
+
+  // ====== SHOW GIF WITH THE BOX ======//
+  openTheBox() {
+    let resultField = document.getElementById('resultField');
+    let resultGif = document.createElement('iframe');
+    resultGif.id = 'resultGif';
+    resultGif.src = 'box.gif'
+    resultField.appendChild(resultGif);
+  }
+
+  // ====== SHOW THE FINISH MESSAGE ======//
+  showFinishMessage() {
+    let resultField = document.getElementById('resultField');
+    resultField.innerHTML = '';
+
+    let numberImg = document.createElement("img");
+    numberImg.id = 'numberImg';
+    numberImg.src = "number12.png";
+    this.root.appendChild(numberImg);
 
     let resultField1 = document.createElement('p'); //field for result
-      let resultField2 = document.createElement('p');
-      resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you almost made it!');
-      resultField2.innerHTML = ('You got '+ sumPoints + ' out of ' + this.questionList.size + ' answers correct!');
+    resultField1.id = 'resultField1';
+    resultField1.innerHTML = ("Congratulations Mikael !!!"); //TODO: delete after testing
+    //resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you made it!'); //TODO: to do default option
+    this.root.appendChild(resultField1);
+
+    let resultField2 = document.createElement("div");
+    resultField2.id = "resultField2";
+    let messageAboutPresent = document.createElement("p");
+    messageAboutPresent.innerHTML = ('Now you can find your PRESENT ...');//TODO: change with correct information
+    this.root.appendChild(messageAboutPresent);
   }
 
-  // showResults() {   //get and show result, restart game //TODO: DELETE OLD VERSION
-  //   root.innerHTML = '';  // remove question's block med btn
-  //   let resultField = document.createElement('div'); // create field for result
-  //   resultField.id = 'resultField';
-  //   this.root.appendChild(resultField);
-  //
-  //   // let sumPoints = this.getPoints(); // return value from this.getPoints() //TODO: убрать
-  //
-  //   let resultField1 = document.createElement('p'); //field for result
-  //   // let resultField2 = document.createElement('p');
-  //   resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you almost made it!');
-  //   // resultField2.innerHTML = ('You got '+ sumPoints + ' out of ' + this.questionList.size + ' answers correct!');
-  //   resultField.appendChild(resultField1);
-  //   // resultField.appendChild(resultField2);
-  //
-  //   let btnPlayAgain =  document.createElement('button'); //add button 'Play again' btnNext.type = 'image'; TODO: DELETE
-  //   btnPlayAgain.innerHTML = 'NEW GAME';
-  //   btnPlayAgain.id = 'btnPlayAgain';
-  //   this.root.appendChild(btnPlayAgain);
-  //   btnPlayAgain.addEventListener('click', (event) => {
-  //     this.reset();
-  //     this.play();
-  //   });
-  // }
-  //
-  // getPoints() {  // sumPoints for showResult
-  //   console.log(this.playersAnswerList); // TODO: TEST debugging
-  //
-  //   const sumPoints = this.playersAnswerList.reduce(
-  //     (points, playersAnswer, i) => {
-  //       const isCorrect = this.compareOneAnswer(
-  //         playersAnswer,
-  //         this.questionList.items[i].correct_answers
-  //       );
-  //
-  //       if (isCorrect) {
-  //         return points + 1;
-  //       }
-  //
-  //       return points;
-  //     },
-  //     0
-  //   );
-  //
-  //   return sumPoints;
-  // }
+  getWrongAnswerMessage() {} //TODO: use or delete
 
-  //----- CHECK THE ANSWER ------- //
-  // compareAnswer (playersAnswer, correctAnswer) { //compare user answers with correct answers
-  //   (playersAnswer === correctAnswer) ?
-  //     // this.savePlayersAnswer(playersAnswer);
-  //     return true;
-  //     :  this.getWrongAnserMessage();
-  // }
-
-  getWrongAnserMessage() {
-
-  }
-  //
-  // compareOneAnswer(playersAnswer, correctAnswer) { //TODO: delete old version for radiobuttons
-  //
-  //   for (let option in correctAnswer) {
-  //     const option2 = option.slice(0, -8); // 'answer_c_correct' -> 'answer_c'
-  //
-  //     // Example: option = 'answer_c_correct'
-  //     // Example: option2 = 'answer_c'
-  //
-  //     if (correctAnswer[option] === 'true') {
-  //       // correct answer
-  //       if (!playersAnswer.includes(option2)) {
-  //         return false;
-  //       }
-  //     } else {
-  //       // incorrect answers
-  //       if (playersAnswer.includes(option2)) {
-  //         return false;
-  //       }
-  //     }
-  //   }
-  //
-  //   return true;
-  // }
-
-  reset() {
+  reset() { //TODO: use or delete
     this.player = null;
     this.questionList = null;
     this.currentQuestion = 0;

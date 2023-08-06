@@ -90,7 +90,6 @@ input, label {
 
 #questText {
   text-align: left;
-  /*height: 5em;*/
   vertical-align: middle;
   font-weight: bold;
   font-family: 'Poppins', 'Raleway', sans-serif;
@@ -127,9 +126,36 @@ input, label {
 
 #resultField {
   height: 7em;
-  margin-top: 3em;
+  margin-top: 20%;
+  /*position: center;*/
 }
 
+#numberImg {
+  margin-top: 0;
+  height: 10rem;
+}
+
+#resultField1 {
+  font-family: 'Bungee Spice', cursive;
+  font-size: x-large;
+  margin-top: 0;
+  margin-right: 5rem;
+}
+
+#resultGif {
+  width: 400px;
+  height: 400px;
+  margin-top : 3rem;
+}
+
+#resultBackground {
+  background-color: #FFBF69;
+  background-image: url("pompons-like-frame.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 @media (max-width: 600px) {
   .grid {
