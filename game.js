@@ -31,13 +31,13 @@ class Game {
     this.root.appendChild(btnPlay);
 
     //======================TODO: delete = this area for testing only!
-    const btnTEST = document.createElement('button');
-    btnTEST.id = 'btnTEST';
-    btnTEST.innerHTML = 'TO THE END';
-    btnTEST.addEventListener('click', (event) => {
-      this.showResults();
-    });
-    this.root.appendChild(btnTEST);
+    // const btnTEST = document.createElement('button');
+    // btnTEST.id = 'btnTEST';
+    // btnTEST.innerHTML = 'TO THE END';
+    // btnTEST.addEventListener('click', (event) => {
+    //   this.showResults();
+    // });
+    // this.root.appendChild(btnTEST);
     //======================TODO: delete area finished here!
   }
 
