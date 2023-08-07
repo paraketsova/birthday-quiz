@@ -200,7 +200,7 @@ class Game {
     resultField2.id = "resultField2";
     let messageAboutPresent = document.createElement("p");
     messageAboutPresent.id = 'messageAboutPresent';
-    messageAboutPresent.innerHTML = "Now you can look for your PRESENT: go to your dad's desk, and check a bookcase, the one on the right. You need the bottom shelf, the 8th book counting from the left. Check its 8th page. Good luck!";
+    messageAboutPresent.innerHTML = "Now you can look for your Present: go to your dad's desk, and check the bookcase (the one on the right). You need the bottom shelf, the 8th book counting from the left. Check its 8th page. Good luck!";
     resultField.appendChild(messageAboutPresent);
 
     let btnFinish = document.createElement('button'); //add button to last screen
