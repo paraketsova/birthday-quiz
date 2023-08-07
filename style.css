@@ -54,6 +54,7 @@ button {
 
 button:hover {
   border-color: #CBF3F0;
+  background-color: #CBF3F0;
   color: black;
 }
 
@@ -115,7 +116,7 @@ input, label {
   width: 8rem;
   box-sizing: border-box;
   border: 1px solid #ddd;
-  font-size: 14px;
+  font-size: 1rem;
   border-radius: 3px;
   margin-top: 1rem;
 }
@@ -125,9 +126,9 @@ input, label {
 }
 
 #resultField {
-  height: 7em;
-  margin-top: 20%;
-  /*position: center;*/
+  height: 7rem;
+  margin-top: 30%;
+  /*margin-right: 5rem;*/
 }
 
 #numberImg {
@@ -137,24 +138,43 @@ input, label {
 
 #resultField1 {
   font-family: 'Bungee Spice', cursive;
-  font-size: x-large;
+  font-size: 1.5rem;
   margin-top: 0;
-  margin-right: 5rem;
 }
 
 #resultGif {
-  width: 400px;
-  height: 400px;
-  margin-top : 3rem;
+  width: 25rem;
+  height: 25rem;
+  /*width: 400px;*/
+  /*height: 400px;*/
+  position: center;
 }
 
-#resultBackground {
+.resultBackground, .lastBackground {
   background-color: #FFBF69;
-  background-image: url("pompons-like-frame.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.resultBackground {
+  background-image: url("clear-birthday-banner.png");
+}
+
+.lastBackground {
+  background-image: url("birthday-banner.png");
+}
+
+#messageAboutPresent {
+  max-width: 20rem;
+  text-align: center;
+  /*position: center;*/
+  margin: auto;
+}
+
+#btnFinish {
+  margin-top: 3rem;
 }
 
 @media (max-width: 600px) {

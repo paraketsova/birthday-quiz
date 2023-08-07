@@ -163,14 +163,14 @@ class Game {
     this.root.innerHTML = '';  // remove question's block med btn
     this.title.innerHTML = '';
     let bodyElement = document.body; //
-    bodyElement.id = 'resultBackground'; // add background for body
+    bodyElement.className = 'resultBackground'; // add second background for body
 
     let resultField = document.createElement('div'); // create field for result
     resultField.id = 'resultField';
     this.root.appendChild(resultField);
 
     this.openTheBox(); //show the box
-    setTimeout(this.showFinishMessage, 1000); //show the finish message
+    setTimeout(this.showFinishMessage, 3000); //show the finish message
   }
 
   // ====== SHOW GIF WITH THE BOX ======//
@@ -189,21 +189,41 @@ class Game {
 
     let numberImg = document.createElement("img");
     numberImg.id = 'numberImg';
-    numberImg.src = "number12.png";
-    this.root.appendChild(numberImg);
+    numberImg.src = "number12.png"; // TODO: this part only for Mikael
+    resultField.appendChild(numberImg);
 
     let resultField1 = document.createElement('p'); //field for result
     resultField1.id = 'resultField1';
-    resultField1.innerHTML = ("Congratulations Mikael !!!"); //TODO: delete after testing
+    resultField1.innerHTML = ("Congratulations Mikael !"); //TODO: delete after testing
     //resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you made it!'); //TODO: to do default option
-    this.root.appendChild(resultField1);
+    resultField.appendChild(resultField1);
 
     let resultField2 = document.createElement("div");
     resultField2.id = "resultField2";
     let messageAboutPresent = document.createElement("p");
-    messageAboutPresent.innerHTML = ('Now you can find your PRESENT ...');//TODO: change with correct information
-    this.root.appendChild(messageAboutPresent);
+    messageAboutPresent.id = 'messageAboutPresent';
+    messageAboutPresent.innerHTML = (`Now you can find your PRESENT: go to the living room, there in the right bookcase, on the bottom shelf, in the 8th book on the left, on the eighth page you will find a note with the exact location of your gift. Good luck!`);//TODO: change with correct information
+    resultField.appendChild(messageAboutPresent);
+
+    let btnFinish = document.createElement('button');
+    btnFinish.id = 'btnFinish';
+    btnFinish.innerHTML = 'AND FINALLY...';
+    resultField.appendChild(btnFinish);
+
+    btnFinish.addEventListener('click', (event) => {
+      showLastImage();
+    })
+
+
+    let showLastImage = () => {
+      this.root.innerHTML = '';  // remove question's block med btn
+      this.title.innerHTML = '';
+      let bodyElement = document.body; //
+      bodyElement.className = 'lastBackground'; // add background for body
+    }
   }
+
+
 
   getWrongAnswerMessage() {} //TODO: use or delete
 
