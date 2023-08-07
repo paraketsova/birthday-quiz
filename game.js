@@ -193,7 +193,7 @@ class Game {
 
     let resultField1 = document.createElement('p'); //field for result
     resultField1.id = 'resultField1';
-    resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you made it!');
+    resultField1.innerHTML = `Congratulations, ${this.player?.name || 'Mikael'}!`;
     resultField.appendChild(resultField1);
 
     let resultField2 = document.createElement("div");
