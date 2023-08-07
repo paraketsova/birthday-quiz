@@ -4,7 +4,7 @@ class Game {
     this.questionList = null;
     this.currentQuestion = 0;
     this.playersAnswerList = [];  // [[0],[1]..] array.length = size.
-    this.playerNames = ["mikael", "миша", "михаил", "мишка", "mikols", "миша ольшанский","михаил ольшанский", "mikael olshansky"];
+    this.playerNames = ["mikael", "миша", "михаил", "мишка", "mikolsh", "миша ольшанский", "михаил ольшанский", "mikael olshansky"];
 
     this.title = document.getElementById('title');
     this.root = document.getElementById('root');
@@ -15,9 +15,9 @@ class Game {
     const introductionText = document.createElement('div');
     introductionText.id = 'introductionText';
     const intro1= document.createElement('p');
-    intro1.innerHTML = "Once a year a birthday person can go to this resource and pass the test.";
+    intro1.innerHTML = "Once a year, a birthday person can come here, and try to pass The Test.";
     const intro2= document.createElement('p');
-    intro2.innerHTML = "If you are a birthday person and you manage to answer 10 questions correctly, then you will receive the key to the <b>treasure</b>, as well as the glory of the HERO OF THE DAY, and you can undoubtedly be proud of yourself.";
+    intro2.innerHTML = "If it's your birthday today, and you manage to answer all 10 questions correctly, you will receive the key to The Treasure, as well as the glory of the Hero of the Day, and you can certainly be proud of yourself.";
     introductionText.appendChild(intro1);
     introductionText.appendChild(intro2);
     this.root.appendChild(introductionText);
@@ -87,7 +87,7 @@ class Game {
         this.askCurrentQuestion();   // TODO: setTimeout(this.askCurrentQuestion, 5000) OR change input to type submit and revise f for button
       })
     } else {
-      greetingsRoot.innerHTML = "Sorry! This quest only for birthday boy";
+      greetingsRoot.innerHTML = "Sorry! This quest is only for a birthday person. Is it really your birthday today?";
       btnPlay.remove();
 
       this.addButtonToHome(); // add button to home screen
@@ -193,15 +193,14 @@ class Game {
 
     let resultField1 = document.createElement('p'); //field for result
     resultField1.id = 'resultField1';
-    resultField1.innerHTML = ("Congratulations Mikael !"); //TODO: delete after testing
-    //resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you made it!'); //TODO: to do default option
+    resultField1.innerHTML = ('Congratulations, ' + this.player.name + ', you made it!');
     resultField.appendChild(resultField1);
 
     let resultField2 = document.createElement("div");
     resultField2.id = "resultField2";
     let messageAboutPresent = document.createElement("p");
     messageAboutPresent.id = 'messageAboutPresent';
-    messageAboutPresent.innerHTML = (`Now you can find your PRESENT: go to the living room, there in the right bookcase, on the bottom shelf, in the 8th book on the left, on the eighth page you will find a note with the exact location of your gift. Good luck!`);//TODO: change with correct information
+    messageAboutPresent.innerHTML = "Now you can look for your PRESENT: go to your dad's desk, and check a bookcase, the one on the right. You need the bottom shelf, the 8th book counting from the left. Check its 8th page. Good luck!";
     resultField.appendChild(messageAboutPresent);
 
     let btnFinish = document.createElement('button'); //add button to last screen
