@@ -39,16 +39,18 @@ class Game {
     });
     this.root.appendChild(btnTEST);
   }
+  //======================TODO: delete area finished here!
 
   play() { //if game starts add form (username, age)
     // ----- GREETINGS AND INPUT FOR NAME ------- //
-    this.root.innerHTML = ''; //  då root är tom
+    this.root.innerHTML = ''; //
 
     let labelNamesRoot = document.createElement('p'); // for username
     labelNamesRoot.innerText = ("Insert your name");
     this.root.appendChild(labelNamesRoot);
 
     let namesRoot = document.createElement('input');
+    namesRoot.type = 'text';
     this.root.appendChild(namesRoot);
     namesRoot.id = 'name';
 
@@ -74,7 +76,6 @@ class Game {
     let greetingsRoot = document.getElementById('greetings');
     this.player = new Player(nameInput.value);
     const btnPlay = document.getElementById("btnAskQ");
-    // if (nameInput.value === "Mikael" || nameInput.value === "Миша" || nameInput.value === "Мишка") {
     if (nameInput.value && this.playerNames.includes(nameInput.value.toLowerCase())) {
       greetingsRoot.innerHTML = "Good luck! And don't cheat!";
       let size = 10;
@@ -87,9 +88,10 @@ class Game {
       })
     } else {
       greetingsRoot.innerHTML = "Sorry! This quest only for birthday boy";
-      btnPlay.remove(); // TODO: add exit to first page?
-    }
+      btnPlay.remove();
 
+      this.addButtonToHome(); // add button to home screen
+    }
   }
 
   // ======= QUESTIONS ZONE ======= //
@@ -119,7 +121,7 @@ class Game {
     labelAnswerTextField.setAttribute('for', 'answer'); //
     answerTextField.type = 'number';
     answerTextField.id = 'answer';
-    answerTextField.name = ('answer_' + this.currentQuestion); //TODO: это нужно???
+    answerTextField.name = ('answer_' + this.currentQuestion); //TODO: delete or use
     answerWrap.appendChild(answerTextField);
 
 
@@ -145,17 +147,14 @@ class Game {
           this.showResults(); //  if it's the last question go to showResult
         }
       } else {
-      //  TODO: add message about wrong answer
+        this.getWrongAnswerMessage();
       }
     })
   }
 
-  // ----- SAVE THE ANSWERS ------- //
+  // ----- SAVE THE ANSWERS ------- // TODO: use in the future or delete
   savePlayersAnswer(currentAnswer) {      // push checked answers in playersAnswer[] and in this.playersAnswerList[]
-    console.log('we on safe now '); //TODO: delete
     this.playersAnswerList.push([this.currentQuestion , +currentAnswer.value]); //push userAnswer in array playersAnswer
-    console.log(this.playersAnswerList); //TODO: delete
-    console.log(this.playersAnswerList[0]); //TODO: delete
   }
 
   // ----- SHOW RESULTS, FINISH GAME? ------- //
@@ -173,8 +172,8 @@ class Game {
     setTimeout(this.showFinishMessage, 3000); //show the finish message
   }
 
-  // ====== SHOW GIF WITH THE BOX ======//
-  openTheBox() {
+  // ====== SHOW GIF WITH BOX ======//
+  openTheBox() { //TODO: delete or use
     let resultField = document.getElementById('resultField');
     let resultGif = document.createElement('iframe');
     resultGif.id = 'resultGif';
@@ -205,15 +204,15 @@ class Game {
     messageAboutPresent.innerHTML = (`Now you can find your PRESENT: go to the living room, there in the right bookcase, on the bottom shelf, in the 8th book on the left, on the eighth page you will find a note with the exact location of your gift. Good luck!`);//TODO: change with correct information
     resultField.appendChild(messageAboutPresent);
 
-    let btnFinish = document.createElement('button');
+    let btnFinish = document.createElement('button'); //add button to last screen
     btnFinish.id = 'btnFinish';
     btnFinish.innerHTML = 'AND FINALLY...';
     resultField.appendChild(btnFinish);
 
     btnFinish.addEventListener('click', (event) => {
       showLastImage();
+      // this.addButtonToHome(); //TODO: fix it - doesn't work
     })
-
 
     let showLastImage = () => {
       this.root.innerHTML = '';  // remove question's block med btn
@@ -223,11 +222,47 @@ class Game {
     }
   }
 
+  //----- SHOW MESSAGE IF ANSWER IS WRONG -----//
+  getWrongAnswerMessage() {
+    let wrongAnswerMessage = document.createElement('div');
+    wrongAnswerMessage.id = 'wrongAnswerMessage';
+    this.root.appendChild(wrongAnswerMessage);
+
+    let wrongAnswerMessage1 = document.createElement('p');
+    wrongAnswerMessage1.className = 'wrongAnswerMessage';
+    wrongAnswerMessage1.innerHTML = `Wrong answer 🤖`;
+    wrongAnswerMessage.appendChild(wrongAnswerMessage1);
+
+    let wrongAnswerMessage2 = document.createElement('p');
+    wrongAnswerMessage2.className = 'wrongAnswerMessage';
+    wrongAnswerMessage2.innerHTML = `Try again and don't give up!`;
+    wrongAnswerMessage.appendChild(wrongAnswerMessage2);
+    setTimeout(this.removeWrongAnswerMessage, 3000);
+  }
+
+  //----- DELETE MESSAGE IF ANSWER IS WRONG -----//
+  removeWrongAnswerMessage() {
+    let wrongAnswerMessage = document.getElementById('wrongAnswerMessage');
+    console.log('remove it now', wrongAnswerMessage);
+    wrongAnswerMessage.remove();
+  }
 
 
-  getWrongAnswerMessage() {} //TODO: use or delete
+  //----- BUTTON TO HOME SCREEN -----//
+  addButtonToHome() {
+    const btnGoHome = document.createElement('button');
+    btnGoHome.innerHTML = '🏠 HOME';
+    btnGoHome.className = 'btnGoHome';
+    this.root.appendChild(btnGoHome);
+    btnGoHome.addEventListener('click', (event) => {
+      this.root.innerHTML = '';
+      this.start();
+    })
+  }
 
   reset() { //TODO: use or delete
+    console.log('reset');
+    this.root.innerHTML = '';
     this.player = null;
     this.questionList = null;
     this.currentQuestion = 0;
