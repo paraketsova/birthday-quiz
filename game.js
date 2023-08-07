@@ -38,8 +38,8 @@ class Game {
       this.showResults();
     });
     this.root.appendChild(btnTEST);
+    //======================TODO: delete area finished here!
   }
-  //======================TODO: delete area finished here!
 
   play() { //if game starts add form (username, age)
     // ----- GREETINGS AND INPUT FOR NAME ------- //
@@ -205,7 +205,7 @@ class Game {
 
     let btnFinish = document.createElement('button'); //add button to last screen
     btnFinish.id = 'btnFinish';
-    btnFinish.innerHTML = 'AND FINALLY...';
+    btnFinish.innerHTML = 'BUT FIRST...';
     resultField.appendChild(btnFinish);
 
     btnFinish.addEventListener('click', (event) => {
