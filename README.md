@@ -1,2 +1,2 @@
 # birthday-quiz
-Little game for birthday boy
+The game is a chain of mathematical riddles that will lead the child to the location of his birthday present.
