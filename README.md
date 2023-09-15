@@ -1,2 +1,2 @@
 # birthday-quiz
-Little game for birthday boy
+Little intricate and fun math game for the birthday kid

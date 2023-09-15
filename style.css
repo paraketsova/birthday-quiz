@@ -123,7 +123,7 @@ input, label {
 }
 
 #answerTextField:focus {
-  outline: 2px solid blue;
+  outline: 2px solid darkslateblue;
 }
 
 .wrongAnswerMessage {
