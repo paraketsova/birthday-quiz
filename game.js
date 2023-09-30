@@ -4,7 +4,7 @@ class Game {
     this.questionList = null;
     this.currentQuestion = 0;
     this.playersAnswerList = [];  // [[0],[1]..] array.length = size.
-    this.playerNames = ["mikael", "миша", "михаил", "мишка", "mikolsh", "миша ольшанский", "михаил ольшанский", "mikael olshansky"];
+    this.playerNames = ["mikael"];
 
     this.title = document.getElementById('title');
     this.root = document.getElementById('root');
@@ -90,7 +90,7 @@ class Game {
       greetingsRoot.innerHTML = "Sorry! This quest is only for a birthday person. Is it really your birthday today?";
       btnPlay.remove();
 
-      this.addButtonToHome(); // add button to home screen
+      this.addButtonToHome();
     }
   }
 

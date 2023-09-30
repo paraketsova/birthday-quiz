@@ -15,8 +15,7 @@ class QuestionList {
           const question = new Question(data[i]);
           this.items.push(question);
         }
-        console.log(this.items); //TODO: DELETE test
-        return this.items; 
+        return this.items;
       }); 
   }
 }
