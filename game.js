@@ -4,7 +4,7 @@ class Game {
     this.questionList = null;
     this.currentQuestion = 0;
     this.playersAnswerList = [];  // [[0],[1]..] array.length = size.
-    this.playerNames = ["mikael", "миша", "михаил", "мишка", "mikolsh", "миша ольшанский", "михаил ольшанский", "mikael olshansky"];
+    this.playerNames = ["mariia"];
 
     this.title = document.getElementById('title');
     this.root = document.getElementById('root');
@@ -42,7 +42,7 @@ class Game {
   }
 
   play() { //if game starts add form (username, age)
-    // ----- GREETINGS AND INPUT FOR NAME ------- //
+    // ----- GREETINGS AND INPUT FOR AGE AND NAME ------- //
     this.root.innerHTML = ''; //
 
     let labelNamesRoot = document.createElement('p'); // for username
@@ -53,6 +53,15 @@ class Game {
     namesRoot.type = 'text';
     this.root.appendChild(namesRoot);
     namesRoot.id = 'name';
+
+    let labelDateRoot = document.createElement('p'); // for username
+    labelDateRoot.innerText = ("Insert your day of birth");
+    this.root.appendChild(labelDateRoot);
+
+    let dateRoot = document.createElement('input');
+    dateRoot.type = 'date';
+    this.root.appendChild(dateRoot);
+    dateRoot.id = 'date';
 
     let greetingsRoot = document.createElement('p');
     greetingsRoot.innerText = ("");
@@ -73,30 +82,50 @@ class Game {
   // ----- ASK NAME ------- //
   askName() {
     let nameInput = document.getElementById('name');
+    let dateInput = document.getElementById('date');
     let greetingsRoot = document.getElementById('greetings');
     this.player = new Player(nameInput.value);
     const btnPlay = document.getElementById("btnAskQ");
-    if (nameInput.value && this.playerNames.includes(nameInput.value.toLowerCase())) {
-      greetingsRoot.innerHTML = "Good luck! And don't cheat!";
-      let size = 10;
-      this.questionList = new QuestionList(size);
-      const btnPlay = document.getElementById("btnAskQ");
-      btnPlay.remove();
+    // if (nameInput.value && this.playerNames.includes(nameInput.value.toLowerCase())) {
+    console.log("name " + nameInput.value) //TODO: delete after testing
 
-      this.questionList.load().then((result) => {  //The then() method returns a Promise. It takes an argument: callback function for the success
-        this.askCurrentQuestion();   // TODO: setTimeout(this.askCurrentQuestion, 5000) OR change input to type submit and revise f for button
+    // ----  CHECK THE DATE OF BIRTH  ---- //
+    // const today = new Date();
+    const today = new Date().toISOString().split('T')[0];
+    const isToday =  dateInput.value.substring(5) === today.substring(5);
+
+    console.log("date " + dateInput.value); //TODO: delete after testing
+    console.log("date-short " + dateInput.value.substring(5)); //TODO: delete after testing
+    console.log("date-today-short " + today.substring(5)); //TODO: delete after testing
+    console.log("is it birthday " + isToday) //TODO: delete after testing
+
+    if (nameInput.value && dateInput.value && isToday) {
+      greetingsRoot.className = "bungee-spice";
+      greetingsRoot.innerHTML = "Good luck " + nameInput.value + "! And don't cheat!";
+      btnPlay.addEventListener('click', (event) => {
+        this.goToThePlay();
       })
     } else {
       greetingsRoot.innerHTML = "Sorry! This quest is only for a birthday person. Is it really your birthday today?";
       btnPlay.remove();
-
       this.addButtonToHome(); // add button to home screen
     }
   }
 
+  // ======= GO TO THE PLAY ======= //
+  goToThePlay() {
+    let size = 10;
+    this.questionList = new QuestionList(size);
+    let  btnPlay = document.getElementById("btnAskQ");
+    btnPlay.remove();
+    this.questionList.load().then((result) => {
+      this.askCurrentQuestion();
+    })
+  }
+
   // ======= QUESTIONS ZONE ======= //
   askCurrentQuestion() {     // - for every question QuestionList  item[i]:
-    root.innerHTML = '';  // clear with GO
+    this.root.innerHTML = '';  // clear with GO
 
     // ----- QUESTION'S COUNTER ------- //
     let questionCounter = document.createElement('div'); // for number of current question
@@ -188,19 +217,19 @@ class Game {
 
     let numberImg = document.createElement("img");
     numberImg.id = 'numberImg';
-    numberImg.src = "number12.png"; // TODO: this part only for Mikael
+    numberImg.src = "number12.png"; // TODO: it must be depend of age!
     resultField.appendChild(numberImg);
 
     let resultField1 = document.createElement('p'); //field for result
     resultField1.id = 'resultField1';
-    resultField1.innerHTML = `Congratulations, ${this.player?.name || 'Mikael'}!`;
+    resultField1.innerHTML = `Congratulations, ${this.player?.name || 'kid'}!`;
     resultField.appendChild(resultField1);
 
     let resultField2 = document.createElement("div");
     resultField2.id = "resultField2";
     let messageAboutPresent = document.createElement("p");
     messageAboutPresent.id = 'messageAboutPresent';
-    messageAboutPresent.innerHTML = "Now you can look for your Present: go to your dad's desk, and check the bookcase (the one on the right). You need the bottom shelf, the 8th book counting from the left. Check its 8th page. Good luck!";
+    messageAboutPresent.innerHTML = "Now you can look for your Present: read a note under your pillow";
     resultField.appendChild(messageAboutPresent);
 
     let btnFinish = document.createElement('button'); //add button to last screen

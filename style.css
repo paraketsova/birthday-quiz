@@ -63,6 +63,10 @@ input, label {
   margin-right: 0.5em;
 }
 
+.bungee-spice {
+  font-family: 'Bungee Spice', cursive;
+}
+
 #name {
   font-family: 'Bungee Spice', cursive;
   height: 3em;
