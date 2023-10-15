@@ -4,7 +4,6 @@ class Game {
     this.questionList = null;
     this.currentQuestion = 0;
     this.playersAnswerList = [];  // [[0],[1]..] array.length = size.
-    this.playerNames = ["mariia"];
 
     this.title = document.getElementById('title');
     this.root = document.getElementById('root');
@@ -84,20 +83,18 @@ class Game {
     let nameInput = document.getElementById('name');
     let dateInput = document.getElementById('date');
     let greetingsRoot = document.getElementById('greetings');
-    this.player = new Player(nameInput.value);
     const btnPlay = document.getElementById("btnAskQ");
-    // if (nameInput.value && this.playerNames.includes(nameInput.value.toLowerCase())) {
     console.log("name " + nameInput.value) //TODO: delete after testing
-
     // ----  CHECK THE DATE OF BIRTH  ---- //
-    // const today = new Date();
+
     const today = new Date().toISOString().split('T')[0];
     const isToday =  dateInput.value.substring(5) === today.substring(5);
-
     console.log("date " + dateInput.value); //TODO: delete after testing
     console.log("date-short " + dateInput.value.substring(5)); //TODO: delete after testing
     console.log("date-today-short " + today.substring(5)); //TODO: delete after testing
     console.log("is it birthday " + isToday) //TODO: delete after testing
+    const age = (+today.substring(0,4)) - (+dateInput.value.substring(0,4));
+    this.player = new Player(nameInput.value, age);
 
     if (nameInput.value && dateInput.value && isToday) {
       greetingsRoot.className = "bungee-spice";
@@ -196,18 +193,7 @@ class Game {
     let resultField = document.createElement('div'); // create field for result
     resultField.id = 'resultField';
     this.root.appendChild(resultField);
-
-    this.openTheBox(); //show the box
-    setTimeout(this.showFinishMessage, 3000); //show the finish message
-  }
-
-  // ====== SHOW GIF WITH BOX ======//
-  openTheBox() { //TODO: delete or use
-    let resultField = document.getElementById('resultField');
-    let resultGif = document.createElement('iframe');
-    resultGif.id = 'resultGif';
-    resultGif.src = 'box.gif'
-    resultField.appendChild(resultGif);
+    this.showFinishMessage(); //show the finish message
   }
 
   // ====== SHOW THE FINISH MESSAGE ======//
@@ -215,14 +201,17 @@ class Game {
     let resultField = document.getElementById('resultField');
     resultField.innerHTML = '';
 
-    let numberImg = document.createElement("img");
-    numberImg.id = 'numberImg';
-    numberImg.src = "number12.png"; // TODO: it must be depend of age!
-    resultField.appendChild(numberImg);
+    // let numberImg = document.createElement("img");
+    // numberImg.id = 'numberImg';
+    // numberImg.src = "number12.png"; // TODO: Add number-image, it must be depend of age!
+    // resultField.appendChild(numberImg);
 
     let resultField1 = document.createElement('p'); //field for result
     resultField1.id = 'resultField1';
-    resultField1.innerHTML = `Congratulations, ${this.player?.name || 'kid'}!`;
+    console.log(this.player.name);
+    console.log(this.player);
+
+    resultField1.innerHTML = `Congratulations, ${this.player?.name || 'kid'}!`; //TODO: NAME have to be here!
     resultField.appendChild(resultField1);
 
     let resultField2 = document.createElement("div");

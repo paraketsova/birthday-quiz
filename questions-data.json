@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "question": "В одной капле воды сидит 4468 бактерий, в другой — в два раза больше, чем в первой, а в третьей — в четыре раза меньше, чем во второй. Сколько бактерий засядут в Мишке, если он перепутает эти капли с молоком и выпьет их залпом?",
-    "correct_answer": 15638
+    "question": "A duck was given $9, a spider was given $36, a bee was given $27. Based off of this information, how much money would be given to a cat?",
+    "correct_answer": 18
   },
   {
     "id": 2,
-    "question": "Макс и  Мишка погнались за папой со скоростью 12 км/ч. Догонят ли они папу, если тот, проехав 45 км со скоростью 15 км/ч, приляжет отдохнуть на часок? (Ответь 1, если догонят и 0, если нет)",
-    "correct_answer": 1
+    "question": "Jake bought a pair of shoes and a shirt, which cost a total of $150. The shoes cost $100 more than the shirt. How much was shirt?",
+    "correct_answer": 25
   },
   {
     "id": 3,
-    "question": "Чтоб быть всегда чистым, Мишке нужно 24 куска мыла в год. Если мыть только пятки и уши, то мыла понадобится в 8 раз меньше. На мытье каждого уха уходит по 1 куску мыла в год. Сколько мыла уходит в год на пятки?",
-    "correct_answer": 1
+    "question": "Your sock drawer contains 18 white socks and 18 blue socks. Without looking, what is the smallest number of socks you should take out to guarantee a matching pair?",
+    "correct_answer": 3
   },
   {
     "id": 4,
-    "question": "Миша Ольшанский сел делать домашнее задание и сидел за столом 2 часа. Сначала он 20 минут ковырял в носу и думал о мороженом, потом 10 минут искал спрятанный папой телефон, чтобы поиграть в нём тихонечко 40 минут. Остальное время Мишка решал задачки по математике. Сколько задачек решил Мишка, если на каждую задачку (он отвлекался чтобы громко поныть: “Бедный-бедный Миша…”) у него ушло по 25 минут?",
-    "correct_answer": 2
+    "question": "You planted sunflower seeds in your garden. Every day, the number of flowers doubles. If it takes 52 days for the flowers to fill the garden, how many days would it take for them to fill half the garden?",
+    "correct_answer": 51
   },
   {
     "id": 5,
-    "question": "Мишка ест вкусный деньрожденческий торт весом 60 килограмм. В первый день он съел пятую часть всего торта, во второй — четвертую часть от оставшегося торта. Сколько килограмм очень вкусного торта съедено Мишкой за два дня?",
-    "correct_answer": 24
+    "question": "I am a three-digit number. My second digit is four times greater than the third digit. My first digit is three less than my second digit. What number am I?",
+    "correct_answer": 141
   },
   {
     "id": 6,
-    "question": "У мамы в шкафу спрятана банка с вареньем весом 650 г. Мишка разведал, где банка, и каждый день съедает по 5 ложек варенья. Сколько граммов варенья обнаружит мама в банке через 20 дней, если известно, что в каждую ложку, съеденную сыном, помещается 5 г варенья?",
-    "correct_answer": 150
+    "question": "Tom was asked to paint numbers outside 100 apartments, which means he will have to paint numbers 1 through 100. How many times will he have to paint the number 8?",
+    "correct_answer": 20
   },
   {
     "id": 7,
-    "question": "Из дома на машине выехал папа и отправился в гости к Мишке. Проехав 11 часов со скоростью 75 км/ч, он проколол шину кривой железякой. Навстречу папе из студенческого общежития в Лулео выехал на велике Мишка. Проехал 5 часов со скоростью 16 км/ч (он много отжимался и накачал мышцы) и тоже проколол шину. Той же самой кривой железякой! Сколько километров между парковкой в Сольне и общежитием в Лулео?",
-    "correct_answer": 905
+    "question": "Grandmother died and left half her money to her granddaughter and half of that amount to her grandson. She left a sixth to her brother, and the remainder, $1,000, to the animal shelter. How much did she leave altogether?",
+    "correct_answer": 12000
   },
   {
     "id": 8,
-    "question": "Мишка купил новую видеоигру и играл в неё две недели ежедневно по три часа днём и по одному часу ночью. Затем Макс догнал Мишку по количеству трофеев, но на это ему потребовалось на 7 часов больше времени (потому что Макс ещё искал сундуки). Сколько часов нужно играть папе, чтоб получить столько же трофеев, если известно, что папа не будет отвлекаться на сундуки, что у Мишки 21 трофей и что папа тратит на получение каждого трофея в три раза меньше времени, чем Макс?",
-    "correct_answer": 21
+    "question": "If 3 cats can catch 3 bunnies in 3 minutes, how long will it take 100 cats to catch 100 bunnies?",
+    "correct_answer": 3
   },
   {
     "id": 9,
-    "question": "У папы было 6 конфеток, а у мамы было на несколько конфеток больше. Чтобы узнать, сколько сладостей досталось маме, папа для начала отнял у нее столько же конфеток, сколько было у него самого, а потом стал смотреть, сколько конфеток осталось у грустной мамы. Оказалось, что мама рыдает с двумя конфетками во рту. Сколько конфеток было у мамы вначале?",
-    "correct_answer": 8
+    "question": "If the zookeeper had 100 pairs of animals in her zoo and if two pairs of babies are born for each and every one of the original animals, and then sadly 23 animal don’t survive, how many animals do you have left in total?",
+    "correct_answer": 977
   },
   {
     "id": 10,
-    "question": "Мишке приснился страшный сон, будто за ним гонятся пять гаргулий, папа с тортом и одиннадцать учителей. Сначала Миша бежал в своем сне очень быстро, и гаргульи отстали от него на 28 км, папа на 40 км, а учителя на 30 км. Но после этого Мишка, как ни старался, не мог бежать быстрее, чем со скоростью 1 км/ч. Мишка бежал и бежал во сне, а за ним гнались: гаргульи со скоростью 3 км/ч, папа со скоростью 7 км/ч и учителя со скоростью 6 км/ч. Кто из них догонит Мишку во сне, если известно, что будильник разбудит мальчика через 8 часов после того, как он начал бежать со скоростью 1 км/ч? (Запиши ответ, указав сумму всех догнавших Мишку преследователей.)",
+    "question": "In two years I know, I'll be twice as old as five years ago, said Tom. How old is Tom?",
     "correct_answer": 12
   }
 ]
