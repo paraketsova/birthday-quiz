@@ -14,16 +14,16 @@ class Game {
     const introductionText = document.createElement('div');
     introductionText.id = 'introductionText';
     const intro1= document.createElement('p');
-    intro1.innerHTML = "Once a year, a birthday person can come here, and try to pass The Test.";
+    intro1.innerHTML = "Раз в год именинник может прийти сюда и пройти ИСПЫТАНИЕ.";
     const intro2= document.createElement('p');
-    intro2.innerHTML = "If it's your birthday today, and you manage to answer all 10 questions correctly, you will receive the key to The Treasure, as well as the glory of the Hero of the Day, and you can certainly be proud of yourself.";
+    intro2.innerHTML = "Если у тебя сегодня день рождения и ты верно ответишь на все 10 вопросов, ты найдёшь путь к СОКРОВИЩУ, а также получишь заслуженый титул ГЕРОЙ ДНЯ и сможешь действительно гордиться собой.";
     introductionText.appendChild(intro1);
     introductionText.appendChild(intro2);
     this.root.appendChild(introductionText);
 
     const btnPlay = document.createElement('button');
     btnPlay.id = 'btnPlay';
-    btnPlay.innerHTML = 'PLAY NOW';
+    btnPlay.innerHTML = 'СЫГРАТЬ';
     btnPlay.addEventListener('click', (event) => {
       this.play();
     });
@@ -45,7 +45,7 @@ class Game {
     this.root.innerHTML = ''; //
 
     let labelNamesRoot = document.createElement('p'); // for username
-    labelNamesRoot.innerText = ("Insert your name");
+    labelNamesRoot.innerText = ("Введи своё имя");
     this.root.appendChild(labelNamesRoot);
 
     let namesRoot = document.createElement('input');
@@ -54,7 +54,7 @@ class Game {
     namesRoot.id = 'name';
 
     let labelDateRoot = document.createElement('p'); // for username
-    labelDateRoot.innerText = ("Insert your day of birth");
+    labelDateRoot.innerText = ("Введи день и год своего рождения");
     this.root.appendChild(labelDateRoot);
 
     let dateRoot = document.createElement('input');
@@ -69,7 +69,7 @@ class Game {
 
 
     let btnAskQ = document.createElement('button');
-    btnAskQ.innerHTML = 'GO';
+    btnAskQ.innerHTML = 'ПОЕХАЛИ!';
     btnAskQ.id = 'btnAskQ';
 
     this.root.appendChild(btnAskQ);
@@ -92,13 +92,19 @@ class Game {
     this.player = new Player(nameInput.value, age);
 
     if (nameInput.value && dateInput.value && isToday) {
-      greetingsRoot.className = "bungee-spice";
-      greetingsRoot.innerHTML = "Good luck " + nameInput.value + "! And don't cheat!";
-      btnPlay.addEventListener('click', (event) => {
-        this.goToThePlay();
-      })
+      greetingsRoot.className = "goodLuckMessage";
+      if (age < 9) {
+        greetingsRoot.innerHTML = "Ты уверен, что тебе сегодня исполняется " + age + "? Кажется ты перепутал год, попробуй ввести имя и дату заново";
+        btnPlay.remove();
+        this.addButtonToHome(); // add button to home screen
+      } else {
+        greetingsRoot.innerHTML = "Удачи " + nameInput.value + "! И не жульничай!";
+        btnPlay.addEventListener('click', (event) => {
+          this.goToThePlay();
+        })
+      }
     } else {
-      greetingsRoot.innerHTML = "Sorry! This quest is only for a birthday person. Is it really your birthday today?";
+      greetingsRoot.innerHTML = "Извини! Этот квест только для именинников. У тебя действительно день рождения сегодня?";
       btnPlay.remove();
       this.addButtonToHome(); // add button to home screen
     }
@@ -148,7 +154,7 @@ class Game {
 
     // ----- CHECK THE ANSWER ------- //
     let btnCheck = document.createElement('button');
-    btnCheck.innerHTML = 'CHECK';
+    btnCheck.innerHTML = 'ПРОВЕРИТЬ';
     btnCheck.id = 'btnCheck';
     this.root.appendChild(btnCheck);
 
@@ -197,39 +203,39 @@ class Game {
 
     let resultField1 = document.createElement('p'); //field for result
     resultField1.id = 'resultField1';
-    resultField1.innerHTML = `Congratulations on your`; //
+    resultField1.innerHTML = `Поздравлем тебя с`; //
     resultField.appendChild(resultField1);
 
     let numberAge = document.createElement("p");
     numberAge.id = 'numberAge';
-    numberAge.innerHTML = `${this.player.age}th`;
+    numberAge.innerHTML = `${this.player.age}-м`;
     resultField.appendChild(numberAge);
 
     let resultField2 = document.createElement("p");
     resultField2.id = "resultField2";
-    resultField2.innerHTML = `birthday, ${this.player?.name || 'kid'}!`;
+    resultField2.innerHTML = `днём рождения, ${this.player?.name || 'kid'}!`;
     resultField.appendChild(resultField2);
 
     let resultField3 = document.createElement("div");
     resultField3.id = "resultField3";
-    resultField3.innerHTML = `This year, you have ${this.player?.age} candles<br/>on your birthday cake,<br/> so you have ${this.player?.age} birthday wishes !<br/><br/> Hope all of them come true <br/>before you blow out the last candle.`;
+    resultField3.innerHTML = `Надежда будет жить, пока в Хайруле <br/>Есть те, чьи помыслы всегда чисты.<br/>Герой придет, подобно летней буре, <br/>Теперь мы знаем, что герой наш - ты!`;
     resultField.appendChild(resultField3);
 
 
     let messageAboutPresent = document.createElement("p");
     messageAboutPresent.id = 'messageAboutPresent';
-    messageAboutPresent.innerHTML = "Now you can look for your Present! <br/> Read a note under your pillow";
+    messageAboutPresent.innerHTML = "Теперь ты можешь отправиться на поиски сокровища! <br/> Оно у тебя под подушкой!";
     resultField.appendChild(messageAboutPresent);
 
 
     let btnFinish = document.createElement('button'); //add button to last screen
     btnFinish.id = 'btnFinish';
-    btnFinish.innerHTML = 'BUT FIRST...';
+    btnFinish.innerHTML = 'НО СНАЧАЛА...';
     resultField.appendChild(btnFinish);
 
     btnFinish.addEventListener('click', (event) => {
       showLastImage();
-      // this.addButtonToHome(); //TODO: fix it - doesn't work
+      // this.addButtonToHome(); //TODO: fix it
     })
 
     let showLastImage = () => {
@@ -248,12 +254,12 @@ class Game {
 
     let wrongAnswerMessage1 = document.createElement('p');
     wrongAnswerMessage1.className = 'wrongAnswerMessage';
-    wrongAnswerMessage1.innerHTML = `Wrong answer 🤖`;
+    wrongAnswerMessage1.innerHTML = `Ответ неверный! 🤖`;
     wrongAnswerMessage.appendChild(wrongAnswerMessage1);
 
     let wrongAnswerMessage2 = document.createElement('p');
     wrongAnswerMessage2.className = 'wrongAnswerMessage';
-    wrongAnswerMessage2.innerHTML = `Try again and don't give up!`;
+    wrongAnswerMessage2.innerHTML = `Не сдавайся, попробуй ответить ещё раз!`;
     wrongAnswerMessage.appendChild(wrongAnswerMessage2);
     setTimeout(this.removeWrongAnswerMessage, 3000);
   }

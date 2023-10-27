@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "question": "A duck was given $9, a spider was given $36, a bee was given $27. Based off of this information, how much money would be given to a cat?",
-    "correct_answer": 18
+    "question": "На завтрак Синий Хинокс съел 2 тонны травы. На обед он съел 4 тонны, а на ужин его самого съел Черный Хинокс. Сколько тонн весил Синий Хинокс с утра, если известно, что после ужина Черный хинокс поправился на 23 тонны?",
+    "correct_answer": 17
   },
   {
     "id": 2,
-    "question": "Jake bought a pair of shoes and a shirt, which cost a total of $150. The shoes cost $100 more than the shirt. How much was shirt?",
-    "correct_answer": 25
+    "question": "Мама спрятала конфеты в нескольких местах. Сначала Макс нашёл самый большой “схрон” и съел. Потом он нашёл самый маленький и эту конфетку он тоже сразу съел. Сколько всего конфет было у мамы, если известно, что папа нашёл и съел четыре конфеты, а остальные тайники с конфетами никто не нашёл и в них была ровно половина всех маминых конфет? При этом, маме удалось найти все фантики от съеденных Максом конфет и их было всего 8.",
+    "correct_answer": 24
   },
   {
     "id": 3,
-    "question": "Your sock drawer contains 18 white socks and 18 blue socks. Without looking, what is the smallest number of socks you should take out to guarantee a matching pair?",
-    "correct_answer": 3
+    "question": "Макс нашёл в лесу вполне взрослую сепульку. У сепульки 3 ноги и в два раза больше ушей. При этом у неё в четыре раза больше глаз, чем ушей. Через год у сепульки появились муж и три маленьких сепулюльки. Сколько глаз во всей сепулькиной семье, если известно, что у взрослых сепулек в два раза больше глаз, чем у малышей?",
+    "correct_answer": 84
   },
   {
     "id": 4,
-    "question": "You planted sunflower seeds in your garden. Every day, the number of flowers doubles. If it takes 52 days for the flowers to fill the garden, how many days would it take for them to fill half the garden?",
+    "question": "Мама, Лиска, два хомячка, страус, паучок и одноногий пират (у него есть одна своя нога, одна деревянная нога и один костыль) решили сделать сюрприз для Макса. Они решили нарисовать сердечко на снегу, с помощью своих следов. Они встали на крыльце, потом прыгнули на покрытый снегом двор и сразу приземлились на все свои точки опоры туда, где должно быть нарисовано сердечко. \nВсе кроме мамы (которая надела тёплые ботинки) и редкого вида полярного страуса, немедленно замёрзли и запрыгнули обратно на крыльцо, не сделав больше никаких следов. А мама со страусом натопали ещё по 12 шагов каждый, на этом закончив фигуру. Из скольки следов всего состоит сердечко на снегу?",
     "correct_answer": 51
   },
   {
     "id": 5,
-    "question": "I am a three-digit number. My second digit is four times greater than the third digit. My first digit is three less than my second digit. What number am I?",
-    "correct_answer": 141
+    "question": "Линк выследил двух Супер-Мега-Бокобосов, встретившихся, чтобы сытно позавтракать, и немедленно победил их. Из первого босса выпало 45 разных вещей, а из второго бокобосса вещей выпало в 3 раза больше. Сколько всего ценных вещей выпало из Супер-Мега-Бокобоссов, погибших голодными?",
+    "correct_answer": 180
   },
   {
     "id": 6,
-    "question": "Tom was asked to paint numbers outside 100 apartments, which means he will have to paint numbers 1 through 100. How many times will he have to paint the number 8?",
-    "correct_answer": 20
+    "question": "Король Хайрула пригласил Динраля в Хайрульский замок на завтрак и попросил прийти ровно в 10 часов утра. Длина Динраля от кончика носа до кончика хвоста 200 м. В котором часу Динраль должен подойти к воротам замка, чтобы, двигаясь со скоростью 3 километра в час, целиком зайти в ворота и при этом не опоздать на завтрак? (запиши ответ цифрами, написав их подряд, например: если твой ответ “в 8 часов 23 минуты”, то запиши его как “823”)",
+    "correct_answer": 956
   },
   {
     "id": 7,
-    "question": "Grandmother died and left half her money to her granddaughter and half of that amount to her grandson. She left a sixth to her brother, and the remainder, $1,000, to the animal shelter. How much did she leave altogether?",
-    "correct_answer": 12000
+    "question": "Уходя на пенсию, строгая учительница Хогвартса подсчитала, что за долгие годы самоотверженного труда она поставила своим ученикам 26172 совсем плохих оценки, 11583 средних оценки , 4884 хороших оценки и 955 просто отличных. Сколько всего отметок поставила строгая учительница за годы самоотверженного труда?",
+    "correct_answer": 43594
   },
   {
     "id": 8,
-    "question": "If 3 cats can catch 3 bunnies in 3 minutes, how long will it take 100 cats to catch 100 bunnies?",
+    "question": "Если три моблина могут поймать трёх белок за три минуты, сколько минут потребуется 100 моблинам чтобы поймать 100 белок?",
     "correct_answer": 3
   },
   {
     "id": 9,
-    "question": "If the zookeeper had 100 pairs of animals in her zoo and if two pairs of babies are born for each and every one of the original animals, and then sadly 23 animal don’t survive, how many animals do you have left in total?",
-    "correct_answer": 977
+    "question": "Стрела, выпущенная Линком из Лука Вечерней Зари, пролетает 50 километров за час. Стрела долетела до логова Ганондорфа за 2 часа. Скорость Линка, идущего пешком - 5 километров в час. За сколько часов Линк доберется до логова Ганондорфа “на своих двоих”, если будет идти не останавливаясь?",
+    "correct_answer": 20
   },
   {
     "id": 10,
-    "question": "In two years I know, I'll be twice as old as five years ago, said Tom. How old is Tom?",
-    "correct_answer": 12
+    "question": "Один именинник взял пачку бумаги и сделал 3 зверюшки оригами за 30 минут. За сколько часов сделает 54 зверика из бумаги этот неутомимый и очень любимый нами мальчик?",
+    "correct_answer": 9
   }
 ]
