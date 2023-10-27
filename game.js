@@ -84,15 +84,10 @@ class Game {
     let dateInput = document.getElementById('date');
     let greetingsRoot = document.getElementById('greetings');
     const btnPlay = document.getElementById("btnAskQ");
-    console.log("name " + nameInput.value) //TODO: delete after testing
     // ----  CHECK THE DATE OF BIRTH  ---- //
 
     const today = new Date().toISOString().split('T')[0];
     const isToday =  dateInput.value.substring(5) === today.substring(5);
-    console.log("date " + dateInput.value); //TODO: delete after testing
-    console.log("date-short " + dateInput.value.substring(5)); //TODO: delete after testing
-    console.log("date-today-short " + today.substring(5)); //TODO: delete after testing
-    console.log("is it birthday " + isToday) //TODO: delete after testing
     const age = (+today.substring(0,4)) - (+dateInput.value.substring(0,4));
     this.player = new Player(nameInput.value, age);
 
@@ -111,7 +106,7 @@ class Game {
 
   // ======= GO TO THE PLAY ======= //
   goToThePlay() {
-    let size = 10;
+    let size = 10;//
     this.questionList = new QuestionList(size);
     let  btnPlay = document.getElementById("btnAskQ");
     btnPlay.remove();
@@ -159,11 +154,9 @@ class Game {
 
     btnCheck.addEventListener('click', (event) => {
       let currentAnswer = document.getElementById('answer').value;
-      console.log(currentAnswer);
       // this.savePlayersAnswer(); // to safe answer to answers array
       const isCorrect = (+currentAnswer === this.questionList.items[this.currentQuestion].correct_answer);
 
-      console.log(isCorrect);
 
       if (isCorrect) {
         if (this.currentQuestion < this.questionList.size - 1) {
@@ -201,25 +194,33 @@ class Game {
     let resultField = document.getElementById('resultField');
     resultField.innerHTML = '';
 
-    // let numberImg = document.createElement("img");
-    // numberImg.id = 'numberImg';
-    // numberImg.src = "number12.png"; // TODO: Add number-image, it must be depend of age!
-    // resultField.appendChild(numberImg);
 
     let resultField1 = document.createElement('p'); //field for result
     resultField1.id = 'resultField1';
-    console.log(this.player.name);
-    console.log(this.player);
-
-    resultField1.innerHTML = `Congratulations, ${this.player?.name || 'kid'}!`; //TODO: NAME have to be here!
+    resultField1.innerHTML = `Congratulations on your`; //
     resultField.appendChild(resultField1);
 
-    let resultField2 = document.createElement("div");
+    let numberAge = document.createElement("p");
+    numberAge.id = 'numberAge';
+    numberAge.innerHTML = `${this.player.age}th`;
+    resultField.appendChild(numberAge);
+
+    let resultField2 = document.createElement("p");
     resultField2.id = "resultField2";
+    resultField2.innerHTML = `birthday, ${this.player?.name || 'kid'}!`;
+    resultField.appendChild(resultField2);
+
+    let resultField3 = document.createElement("div");
+    resultField3.id = "resultField3";
+    resultField3.innerHTML = `This year, you have ${this.player?.age} candles<br/>on your birthday cake,<br/> so you have ${this.player?.age} birthday wishes !<br/><br/> Hope all of them come true <br/>before you blow out the last candle.`;
+    resultField.appendChild(resultField3);
+
+
     let messageAboutPresent = document.createElement("p");
     messageAboutPresent.id = 'messageAboutPresent';
-    messageAboutPresent.innerHTML = "Now you can look for your Present: read a note under your pillow";
+    messageAboutPresent.innerHTML = "Now you can look for your Present! <br/> Read a note under your pillow";
     resultField.appendChild(messageAboutPresent);
+
 
     let btnFinish = document.createElement('button'); //add button to last screen
     btnFinish.id = 'btnFinish';
@@ -260,7 +261,6 @@ class Game {
   //----- DELETE MESSAGE IF ANSWER IS WRONG -----//
   removeWrongAnswerMessage() {
     let wrongAnswerMessage = document.getElementById('wrongAnswerMessage');
-    console.log('remove it now', wrongAnswerMessage);
     wrongAnswerMessage.remove();
   }
 
@@ -278,7 +278,6 @@ class Game {
   }
 
   reset() { //TODO: use or delete
-    console.log('reset');
     this.root.innerHTML = '';
     this.player = null;
     this.questionList = null;
