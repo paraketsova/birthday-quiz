@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "question": "A duck was given $9, a spider was given $36, a bee was given $27. Based off of this information, how much money would be given to a cat?",
-    "correct_answer": 18
+    "question": "Известно, что нежить и демоны - существа костлявые. В одном Frost Giant Skeleton 4468 костей, в Orcus костей в два раза больше, при этом в Thunderbeast Skeleton костей в четыре раза меньше, чем в Orcus. Сколько дополнительных костей достанется Skeletal Juggernaut, если он сможет победить всех этих монстров на ледяной арене?",
+    "correct_answer": 15638
   },
   {
     "id": 2,
-    "question": "Jake bought a pair of shoes and a shirt, which cost a total of $150. The shoes cost $100 more than the shirt. How much was shirt?",
-    "correct_answer": 25
+    "question": "Слегка побитый Devastation Scorpion вышел из города Эмона и шёл без остановок со скоростью 60 км в час, направляясь в подземный город Крагхаммер. В то же время Mountain giant вышел ему навстречу из Крагхаммера в Эмон и тоже шёл без остановок со скоростью 40 км в час. Расстояние между Эмоном и Крагхаммером составляет 700 км. На каком расстоянии (в км) будут эти монстры за 1 час до их встречи?",
+    "correct_answer": 100
   },
   {
     "id": 3,
-    "question": "Your sock drawer contains 18 white socks and 18 blue socks. Without looking, what is the smallest number of socks you should take out to guarantee a matching pair?",
-    "correct_answer": 3
+    "question": "Чтоб победить всех астральных врагов в Spelljammer и не умереть, Перси нужно выпить 24 зелья лечения. Если сражаться только с парочкой Astral Elf Aristocrat и с застенчивым Astral Elf Warrior, то зелья понадобится в 8 раз меньше. На сражение с каждым Astral Elf Aristocrat уходит по одному зелью. Сколько зелья потребуется для победы над Astral Elf Warrior?",
+    "correct_answer": 1
   },
   {
     "id": 4,
-    "question": "You planted sunflower seeds in your garden. Every day, the number of flowers doubles. If it takes 52 days for the flowers to fill the garden, how many days would it take for them to fill half the garden?",
-    "correct_answer": 51
+    "question": "Бой Флемина, Астоариона и Изуцуми в таинственной пещере длился 3 минуты. В итоге Астарион сумел провести 10 ходов, Изуцуми, с учетом успешно наложенных  на неё заклинаний ужаса, сделала всего 9 ходов, а Флемин, заблаговременно воспользовавшийся свитком “Protection from evil and good” провел аж 11 ходов в этом бою. Остальное время боя было занято ходами пещерной нежити. Сколько Баньши участвовало в бою, если каждый баньши успел сделать по 10 ходов каждый?",
+    "correct_answer": 2
   },
   {
     "id": 5,
-    "question": "I am a three-digit number. My second digit is four times greater than the third digit. My first digit is three less than my second digit. What number am I?",
-    "correct_answer": 141
+    "question": "Три героя получили за выполнение задания 24 самоцвета, причём каждому досталось количество камней, равное показателю здоровья у персонажа на момент окончания боя. Хуже всех в бою пришлось Перси, самой здоровой была Изуцуми, а дварф пострадал больше тифлинга, но меньше полурослика. \nПолурослик, довольно хитрый малый, предложил друзьям такой обмен камнями:\n— Я, — сказал он, — оставлю себе только половину полученных камней, а остальные разделю между вами поровну. После этого пусть дварф, который пострадал чуть меньше, чем я, тоже оставит себе половину, а остальные камни даст поровну мне и тифлингу.  Затем и тифлинг пусть оставит себе половину всех имеющихся у него тогда камней, разделив остальные самоцветы поровну между мной и дварфом.\nГерои, не увидев коварства в таком предложении, согласились с полуросликом. В результате... к удивлению Перси, у всех оказалось поровну самоцветов. Сколько очков здоровья было у Перси в конце боя?",
+    "correct_answer": 4
   },
   {
     "id": 6,
-    "question": "Tom was asked to paint numbers outside 100 apartments, which means he will have to paint numbers 1 through 100. How many times will he have to paint the number 8?",
-    "correct_answer": 20
+    "question": "У самого древнего в мире Ghost Dragon 650 очков здоровья. Астарион, оказавшийся в дальнем углу драконьего логова, поняв, что не в состоянии справится с этим гигантом в открытом бою до прихода своих напарников, нанес ему хитрый укус в заднюю лапу, который привел к незаживающей ране. Эта рана будет каждую минуту наносить гиганту урон, равный 5 ударам костлявого вампирского кулака. Сколько очков здоровья останется у дракона через 20 минут, если известно, что каждый удар астарионского кулака наносит 5 очков урона?",
+    "correct_answer": 150
   },
   {
     "id": 7,
-    "question": "Grandmother died and left half her money to her granddaughter and half of that amount to her grandson. She left a sixth to her brother, and the remainder, $1,000, to the animal shelter. How much did she leave altogether?",
-    "correct_answer": 12000
+    "question": "Перси и Флемин решили купить в кондитерской у эльфов каждый по магической булочке. Но у них не хватает денег. Известно, что у Флемина недостает 1 монеты, а у Перси не хватает аж девяти.\n— А давай, — говорит Перси, — скинемся и купим одну на двоих? Хоть попробуем…\nФлемин соглашается, они скидываются и... им всё равно не хватает. Так сколько же монет стоила эльфийская магическая булочка?",
+    "correct_answer": 9
   },
   {
     "id": 8,
-    "question": "If 3 cats can catch 3 bunnies in 3 minutes, how long will it take 100 cats to catch 100 bunnies?",
-    "correct_answer": 3
+    "question": "Во дворце Касадора 6 этажей. Во сколько раз путь по лестнице с первого на шестой этаж длиннее, чем путь по той же лестнице с первого на третий этаж, если лестничные пролёты между этажами состоят из одинакового количества ступенек?",
+    "correct_answer": 2.5
   },
   {
     "id": 9,
-    "question": "If the zookeeper had 100 pairs of animals in her zoo and if two pairs of babies are born for each and every one of the original animals, and then sadly 23 animal don’t survive, how many animals do you have left in total?",
-    "correct_answer": 977
+    "question": "Монстры проводят конкурс по поеданию  героев — кто больше съест  за истекший год. К финальному соревнованию допускаются только те, кто способен съесть не менее сотни героев - монстры самого высокого уровня. В финал вышли четверо: Tarrasque, Aspect of Tiamat, Aspect of Bahamut и Tiamat. Известно, что победил Tarrasque. Aspect of Tiamat, напару с Aspect of Bahamut, в сумме съели 599 героев. Известно также, что всего в за истекший год монстры уничтожили ровно 1 000 прекрасных и смелых воителей. Сколько героев съел победитель конкурса?",
+    "correct_answer": 301
   },
   {
     "id": 10,
-    "question": "In two years I know, I'll be twice as old as five years ago, said Tom. How old is Tom?",
-    "correct_answer": 12
+    "question": "Флемин спросил как-то у Астариона сколько ему лет, в пересчёте на человеческий возраст. Астарион ответил, что его возраст - очень примечательное число. Если от него отнять 2, то оно разделится на 3, а если отнять 3, то разделится на 2. Если к нему прибавить 4, то оно разделится на 5, а если от него отнять 5, то разделится на 4. Если от него отнять 5, оно ещё разделится на 6, а если отнять 6, то разделится на 5. Если к нему прибавить 7, то оно разделится на 8, а если прибавить 8, то разделится на 7. Флемин выругался и перестал спрашивать Астариона о возрасте. Сколько лет Астариону (в пересчёте на человеческий возраст)?",
+    "correct_answer": 41
   }
 ]
