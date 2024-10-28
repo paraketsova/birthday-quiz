@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "question": "A duck was given $9, a spider was given $36, a bee was given $27. Based off of this information, how much money would be given to a cat?",
-    "correct_answer": 18
+    "question": "A duck was given $2, a spider was given $8, a bee was given $6. Based off of this information, how much money would be given to a cat?",
+    "correct_answer": 4
   },
   {
     "id": 2,
@@ -21,8 +21,8 @@
   },
   {
     "id": 5,
-    "question": "I am a three-digit number. My second digit is four times greater than the third digit. My first digit is three less than my second digit. What number am I?",
-    "correct_answer": 141
+    "question": " If seven people meet each other and each shake hands only once with each of the others, how many handshakes happened?",
+    "correct_answer": 21
   },
   {
     "id": 6,
@@ -31,8 +31,8 @@
   },
   {
     "id": 7,
-    "question": "Grandmother died and left half her money to her granddaughter and half of that amount to her grandson. She left a sixth to her brother, and the remainder, $1,000, to the animal shelter. How much did she leave altogether?",
-    "correct_answer": 12000
+    "question": "If you multiply this number by any other number, the answer will always be the same. What number is this?",
+    "correct_answer": 0
   },
   {
     "id": 8,
